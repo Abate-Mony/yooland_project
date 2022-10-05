@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/brands.min.css" integrity="sha512-+oRH6u1nDGSm3hH8poU85YFIVTdSnS2f+texdPGrURaJh8hzmhMiZrQth6l56P4ZQmxeZzd2DqVEMqQoJ8J89A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+
+</head>
+
+<body>
+    <nav>
+
+        <div class="container">
+
+
+            <div class="nav__container">
+                <div class="nav__item --center" style="flex-direction:column;gap:0.4rem">
+                    <span id="nav-toggler"> <i class="fa-solid fa-bars" style="font-size:1.2rem"></i></span>
+                    <p>MENU</p>
+                </div>
+                <div class="nav__item">
+                    <h2>HOTEL CAFE ROYAL</h2>
+                    <!-- <p>REGENT STREET,LONDON</p> -->
+                </div>
+                <div class="nav__item">
+                    <i class="fa-solid fa-trash" style="font-size:1rem"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="side-nav">
+        <div class="side-nav-container">
+            <div id="close-btn" onclick="toggleSideNav()">
+                <i class="fa-solid fa-xmark" style="font-size:2rem"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- end of nav bar here -->
+
+
+    <div class="navigate-btn">
+        <span><i class="fa-solid fa-chevron-up"></i></span>
+        <span><i class="fa-solid fa-chevron-down"></i></span>
+    </div>
+    <!-- navigate btn -->
+
+    <div class="slider-container">
+
+        <span id="left-arrow" class="arrow">
+            <i class="fa-solid fa-chevron-left" style="font-size: 3rem;"></i>
+        </span>
+        <span id="right-arrow" class="arrow">
+            <i class="fa-solid fa-chevron-right" style="font-size: 3rem;"></i>
+        </span>
+        <div class="dots-container">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <!-- end here -->
+        <div class="slide-image-container">
+            <img src="https://806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/u/hotel-cafe-royal/akasha/HCR-treatment2.jpg" alt="">
+        </div>
+        <div class="slide-image-container" style="left:100%;">
+            <img src="https://806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/responsive/1536/806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/responsive/16:9/806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/u/hotel-cafe-royal/akasha/Hotel-Cafe-Royal---Akasha---Gym4.jpg"
+                alt="">
+        </div>
+        <div class="slide-image-container" style="left:100%;">
+            <img src="https://806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/responsive/1536/806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/responsive/16:9/806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/u/hotel-cafe-royal/akasha/Hotel-Cafe-Royal---Akasha---Hammam_Steam-Room.2.jpg"
+                alt="">
+        </div>
+        <div class="slide-image-container" style="left:100%;">
+            <img src="https://806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/responsive/16:9/806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/u/Hotel-Cafe-Royal---Akasha---Swimming-Pool3.jpg" alt="">
+        </div>
+        <div class="slide-image-container" style="left:200%;">
+            <img src="https://806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/responsive/16:9/806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/u/Milophotographie_HotelCafeRoyal1105--1-.jpg" alt="">
+        </div>
+        <div class="slide-image-container" style="left:200%;">
+            <img src="https://806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/responsive/16:9/806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/u/hotel-cafe-royal/akasha/Hotel-Caf---Royal---Akasha---Golden-Hammam.2.jpg"
+                alt="">
+        </div>
+
+    </div>
+
+    <!--  end here-->
+
+    <section>
+        <div class="container-content">
+            <div class="border-bottom-box">
+                <h1 class="big-header">
+                    RETURN TO THE ESSENCE OF CREATION IN LONDON'S HOLISTIC WELLBEING
+                </h1>
+                <p>
+                    Before earth, water, fire and air, the legends say, there was Akasha, the source of all creation. At Hotel Cafe Royal, you're invited to return to that source – Akasha Holistic Wellbeing. Here at our exclusive wellness club, spacious facilities for exercise
+                    and massage are just the beginning. From nutrition to meditation, and Reiki to Watsu, you can enjoy expert treatments, therapies and training offered at no other London hotel. Akasha – the way to start the perfect London day, or unwind
+                    after one.
+                </p>
+            </div>
+        </div>
+        <div class="container-content">
+            <div class="border-bottom-box">
+                <div class="grid">
+                    <div class="text-box">
+                        <h2>Memberships</h2>
+                        <p>The Akasha Holistic Wellbeing Centre provides a unique wellbeing experience that assists members in promoting human potential, health, happiness and fulfilment while improving personal balance.</p>
+                        <button>MORE INFO</button>
+                    </div>
+                    <div class="img-box">
+                        <img src="https://806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/responsive/994/806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/u/hotel-cafe-royal/akasha/London-Retreat.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-content">
+            <div class="border-bottom-box">
+                <div class="grid">
+                    <div class="img-box">
+                        <img src="https://806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/responsive/994/a3a80601ed9c61c5137a-e7c5344b3b84eec5da7b51276407b19c.r92.cf1.rackcdn.com/u/hotel-cafe-royal/akasha/Hotel-Cafe-Royal---Akasha---Double-Treatment-Suite.jpg"
+                            alt="">
+                    </div>
+                    <div class="text-box">
+                        <h2>Treatments</h2>
+                        <p>Nine treatment rooms, including a double treatment Akasha Suite, offer signature treatments which marry innovative Western practices with ancient Eastern traditions. There is a private Hammam for purifying scrubs and massages and
+                            a Vichy shower for cleansing hydrotherapy rituals. Akasha also boasts London’s first Watsu pool for tailored hydro-treatments and guided meditation</p>
+                        <button>MORE INFO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-content">
+            <div class="border-bottom-box">
+                <div class="grid">
+                    <div class="text-box">
+                        <h2>Memberships</h2>
+                        <p>Within Akasha a large and spacious gym area spans over 300sqm/3,230sqft. Cutting edge technology includes LifeFitness equipment, personal entertainment centres with 19” touch screens and iPad docks.</p>
+                        <p>These facilities are combined with the knowledge of fully dedicated personal trainers and a range of holistic classes</p>
+                        <button>MORE INFO</button>
+                    </div>
+                    <div class="img-box">
+                        <img src="https://806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/responsive/994/806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/u/hotel-cafe-royal/akasha/Milophotographie_HotelCafeRoyal0001.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-content">
+            <div class="border-bottom-box">
+                <div class="grid">
+                    <div class="img-box">
+                        <img src="https://806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/u/hotel-cafe-royal/akasha/Hotel-Cafe-Royal---Akasha---Lounge-Bar-1.jpg" alt="">
+                    </div>
+                    <div class="text-box">
+                        <h2>Treatments</h2>
+                        <p>Within the serenity of Akasha a lounge bar offers a selection of healthy and nourishing dishes. Designed in collaboration with a nutritionist, the Four Elements Menu incorporates ingredients reflecting the four elements upon which
+                            the concept of Akasha is built. Herbal teas, cold pressed juices and energising drinks are also served</p>
+                        <button>MORE INFO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-content">
+            <div class="border-bottom-box">
+                <div class="grid">
+                    <div class="text-box">
+                        <h2>Memberships</h2>
+                        <!-- <p>Within Akasha a large and spacious gym area spans over 300sqm/3,230sqft. Cutting edge technology includes LifeFitness equipment, personal entertainment centres with 19” touch screens and iPad docks.</p> -->
+                        <p>From indulgent spa days to relaxing and rejuvenating body treatments and facials, or even an annual membership at Akasha, give your loved ones the gift of wellbeing. </p>
+                        <button>MORE INFO</button>
+                    </div>
+                    <div class="img-box">
+                        <img src="https://806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/responsive/994/806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/u/hotel-cafe-royal/akasha/Hotel-Cafe-Royal---Akasha---Voucher---Membership-1.jpg"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-content">
+            <div class="border-bottom-box">
+                <div class="grid">
+                    <div class="img-box">
+                        <img src="https://806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/responsive/994/806d2bf04cf5fa54997a-e7c5344b3b84eec5da7b51276407b19c.ssl.cf1.rackcdn.com/u/hotel-cafe-royal/akasha/Akasha---Double-Treatment-Suite---Couples-Champagne-set-up.jpg"
+                            alt="">
+                    </div>
+                    <div class="text-box">
+                        <h2>Treatments</h2>
+                        <p>We're delighted to annouce that Akasha has been nominated for England's Best Hotel Spa and England's Best Wellness Retreat at the World Spa Awards 2022, as well as Best Spa for Guest Experience in the Good Spa Guide Awards 2022.</p>
+                        <p>We're delighted to annouce that Akasha has been nominated for England's Best Hotel Spa and England's Best Wellness Retreat at the World Spa Awards 2022, as well as Best Spa for Guest Experience in the Good Spa Guide Awards 2022.</p>
+                        <button>MORE INFO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-content">
+            <div class="border-bottom-box">
+                <h1 class="big-header">
+                    AKASHA HOLISTIC WELLBEING AT THE SET HOTELS
+                </h1>
+                <p>
+                    In addition to Akasha Holistic Wellbeing London, we also offer luxurious spas and membership gyms at our sister hotels and fellow founding members of The Set Hotels, Conservatorium Hotel in Amsterdam and Hotel Lutetia in Paris. Find an oasis of calm,
+                    world-leading facilities and dedicated wellbeing professionals in these three vibrant destinations.
+                </p>
+                <p style="padding-top:1.9rem">Explore Akasha on Instagram in London, Paris and Amsterdam below.
+                </p>
+            </div>
+        </div>
+        <div class="container-content">
+            <div class="border-bottom-box">
+                <div class="grid__2">
+                    <div>
+                        <h2>
+                            Contact
+                        </h2>
+                        <p>
+                            Email: akasha@hotelcaferoyal.com
+                        </p>
+                    </div>
+                    <div>
+                        <h2>
+                            Opening Times
+                        </h2>
+                        <h4>
+                            Hotel Guests & Akasha Members
+                        </h4>
+                        <p>
+                            Monday to Friday: 7:15am - 9:00pm
+                        </p>
+                        <p>
+                            Monday to Friday: 7:15am - 9:00pm
+                        </p>
+                        <p>Our Regent Street entrance is open at 9:00am and therefore guests that require the access prior 9:00am can enter via the main hotel entrance</p>
+                        <h4>External Spa Day Guests</h4>
+                        <p>Monday to Sunday 9.00am - 9.00pm</p>
+                    </div>
+                    <div>
+                        <h2>
+                            Contact
+                        </h2>
+                        <p>
+                            We are delighted to welcome junior guests (age 5-16) under the guidance of an adult.
+                        </p>
+                        <p>Monday to Friday: 9:00am - 10:30am & 4:00pm - 5:30pm</p>
+                        <p>Saturday & Sunday: 9:00am – 11:00am & 4:00pm – 6:00pm</p>
+                        <p>We kindly advise guests to book their preferred time in advance.</p>
+                        <p>Families with children under age 5 are welcome to use our Watsu pool during the junior hours. Access to the fitness centre and massages are available from age 16 and above.</p>
+                    </div>
+                </div>
+                <div class="grid__3">
+                    <div class="grid-img-container">
+                        <div class="overlay">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At.</p>
+                            <!-- <div class="social-btn"></div> -->
+                            <a href="#">
+                                <i class="fa-brands fa-instagram" style="font-size: 2rem;"></i>
+                            </a>
+                        </div>
+                        <!-- <img src="" alt=""> -->
+                    </div>
+                    <div class="grid-img-container">
+                        <div class="overlay">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At.</p>
+                            <!-- <div class="social-btn"></div> -->
+                            <a href="#">
+                                <i class="fa-brands fa-instagram" style="font-size: 2rem;"></i>
+                            </a>
+                        </div>
+
+                        <!-- <img src="" alt=""> -->
+                    </div>
+
+                    <div class="grid-img-container">
+                        <div class="overlay">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At.</p>
+                            <!-- <div class="social-btn"></div> -->
+                            <a href="#">
+                                <i class="fa-brands fa-instagram" style="font-size: 2rem;"></i>
+                            </a>
+                        </div>
+
+                        <!-- <img src="" alt=""> -->
+                    </div>
+                    <div class="grid-img-container">
+                        <div class="overlay">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At.</p>
+                            <!-- <div class="social-btn"></div> -->
+                            <a href="#">
+                                <i class="fa-brands fa-instagram" style="font-size: 2rem;"></i>
+                            </a>
+                        </div>
+
+                        <!-- <img src="" alt=""> -->
+                    </div>
+                    <div class="grid-img-container">
+                        <div class="overlay">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At.</p>
+                            <!-- <div class="social-btn"></div> -->
+                            <a href="#">
+                                <i class="fa-brands fa-instagram" style="font-size: 2rem;"></i>
+                            </a>
+                        </div>
+
+                        <!-- <img src="" alt=""> -->
+                    </div>
+                    <div class="grid-img-container">
+                        <div class="overlay">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At.</p>
+                            <!-- <div class="social-btn"></div> -->
+                            <a href="#">
+                                <i class="fa-brands fa-instagram" style="font-size: 2rem;"></i>
+                            </a>
+                        </div>
+
+                        <!-- <img src="" alt=""> -->
+                    </div>
+
+                    <div class="grid-img-container">
+                        <div class="overlay">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At.</p>
+                            <!-- <div class="social-btn"></div> -->
+                            <a href="#">
+                                <i class="fa-brands fa-instagram" style="font-size: 2rem;"></i>
+                            </a>
+                        </div>
+
+                        <!-- <img src="" alt=""> -->
+                    </div>
+                    <div class="grid-img-container">
+                        <div class="overlay">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At.</p>
+                            <!-- <div class="social-btn"></div> -->
+                            <a href="#">
+                                <i class="fa-brands fa-instagram" style="font-size: 2rem;"></i>
+                            </a>
+                        </div>
+
+                        <!-- <img src="" alt=""> -->
+                    </div>
+                    <div class="grid-img-container">
+                        <div class="overlay">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At.</p>
+                            <!-- <div class="social-btn"></div> -->
+                            <a href="#">
+                                <i class="fa-brands fa-instagram" style="font-size: 2rem;"></i>
+                            </a>
+                        </div>
+
+                        <!-- <img src="" alt=""> -->
+                    </div>
+                    <div class="grid-img-container">
+                        <div class="overlay">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At.</p>
+                            <!-- <div class="social-btn"></div> -->
+                            <a href="#">
+                                <i class="fa-brands fa-instagram" style="font-size: 2rem;"></i>
+                            </a>
+                        </div>
+
+                        <!-- <img src="" alt=""> -->
+                    </div>
+
+                </div>
+                <div class="loadmore">
+                    load more
+                </div>
+            </div>
+        </div>
+        <div class="container-content">
+            <div class="logo-box"></div>
+        </div>
+
+    </section>
+    <script src="./index.js"></script>
+</body>
+
+</html>
