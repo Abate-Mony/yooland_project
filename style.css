@@ -12,12 +12,25 @@
     --container-md: 96%;
     --container-lg: 90%;
     --container-content-lg: 70%;
+    --color: #4c4c4c;
     --text-center: center;
     --flex: flex;
 }
 
+a {
+    text-decoration: none;
+}
+
 html {
     scroll-behavior: smooth;
+}
+
+body {
+    /* font-weight: 300; */
+    color: var(--color);
+    /* overflow: hidden; */
+    /* font-size: 1.6rem; */
+    /* line-height: 1.5; */
 }
 
 .--center {
@@ -33,6 +46,13 @@ nav {
     z-index: 12;
     width: 100%;
     background-color: var(--color-white);
+}
+
+.--d-none {
+    /* animation-name: slideLeft;
+    animation-duration: 2s;
+    animation-fill-mode: both; */
+    display: none
 }
 
 .container {
@@ -66,21 +86,62 @@ nav {
 }
 
 .side-nav {
-    transition: all 0.4s ease-in;
+    transition: all 0.7s ease-in;
     position: fixed;
     height: 100vh;
     width: 450px;
-    background-color: blue;
+    background-color: var(--color-white);
     z-index: 13;
     left: -100%;
     top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: fit-content;
+    text-align: center;
+    position: relative;
+}
+
+.side-nav li {
+    font-size: 1.2rem;
+    color: var(--color);
+}
+
+.side-nav li a {
+    color: var(--color);
+    text-transform: uppercase;
+    position: relative;
+}
+
+.overlayx {
+    position: absolute;
+    background-color: #38617a;
+    transform: rotate(-1deg);
+    transform-origin: left;
+    padding: 1rem 0;
+    opacity: 0.9;
+    z-index: -20;
+    bottom: 0;
+}
+
+.side-nav li a:hover>.overlayx {
+    animation-name: navanimation;
+    animation-duration: 1s;
 }
 
 #close-btn {
     position: absolute;
     top: 2rem;
     left: 1rem;
-    background-color: #fff;
+    background-color: rgb(6, 11, 34);
     z-index: 14;
 }
 
@@ -91,7 +152,6 @@ nav {
     display: flex;
     flex-direction: column;
     z-index: 15;
-    /* gap: 0.5rem; */
 }
 
 .navigate-btn span {
@@ -104,6 +164,10 @@ nav {
     height: 90vh;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .slide-image-container {
@@ -112,6 +176,10 @@ nav {
     position: absolute;
     overflow: hidden;
     transition: all 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .slide-image-container img {
@@ -127,6 +195,18 @@ nav {
     top: 50%;
 }
 
+.img-overlay {
+    width: 100%;
+    background-color: #38617a;
+    position: absolute;
+    z-index: 13;
+    padding: 2rem;
+    background: transparent;
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+}
+
 #left-arrow {
     left: 10px;
 }
@@ -136,13 +216,16 @@ nav {
 }
 
 .dots-container {
+    width: 100%;
     position: absolute;
     bottom: 10px;
     z-index: 12;
     margin: 0 auto;
-    left: 50%;
+    /* left: 50%; */
     display: flex;
     gap: 0.8rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .dot {
@@ -162,7 +245,7 @@ nav {
 
 .border-bottom-box {
     padding: 3rem 0rem;
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid var(--color-black);
     text-align: center;
 }
 
@@ -197,13 +280,22 @@ nav {
     line-height: 1.2rem;
 }
 
-.text-box button {
-    border: 1px solid blue;
+.text-box button,
+.--center-btn {
+    border: 1px solid #38617a;
     background-color: white;
     padding: 0.8rem 1rem;
     width: fit-content;
     font-size: 0.8rem;
+    color: #38617a;
 }
+
+
+/* 
+.--center-btn {
+    margin: 0 auto;
+    background-color: yellow;
+} */
 
 .grid__2 {
     display: grid;
@@ -228,8 +320,12 @@ nav {
 .grid-img-container {
     width: 100%;
     height: 150px;
-    border: 1px solid greenyellow;
     position: relative;
+}
+
+.grid-img-container img {
+    width: 100%;
+    height: 100%;
 }
 
 .loadmore {
@@ -270,6 +366,71 @@ nav {
     animation-duration: 1.5s;
 }
 
+
+/* remove btn here */
+
+.button {
+    padding: 2rem 4rem;
+    background-color: #1a3c5f;
+    width: fit-content;
+    position: fixed;
+    bottom: 0;
+    z-index: 15;
+    left: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    display: none;
+}
+
+.button button {
+    background-color: transparent;
+    border: none;
+    color: var(--color-white);
+    font-size: 1.5rem;
+}
+
+.button span:nth-child(1),
+.button span:nth-child(2) {
+    display: none;
+}
+
+.img__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+}
+
+.img-container- {
+    position: relative;
+}
+
+.img-container- img {
+    width: 100%;
+    height: 100%;
+}
+
+.img-grid-overlay {
+    display: none;
+}
+
+.img-container-:hover>.img-grid-overlay {
+    transition: all 0.9s ease;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: transparent
+}
+
+.img-container-:hover>img {
+    filter: blur(7px) brightness(70%);
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -279,12 +440,32 @@ nav {
     }
 }
 
+@keyframes navanimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 50vw;
+    }
+}
+
 @media only screen and (max-width:768px) {
     .container-content {
         width: var(--container-lg);
     }
     .grid__3 {
         grid-template-columns: repeat(3, auto);
+    }
+    .btn-chevron {
+        display: none;
+    }
+    .button {
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        font-size: 1rem;
     }
 }
 
@@ -303,5 +484,14 @@ nav {
     }
     .side-nav {
         width: 100%;
+    }
+    .arrow {
+        display: none;
+    }
+    .text-box button {
+        padding: 0.8rem 1.2rem;
+    }
+    .slide-image-container {
+        height: 50%;
     }
 }
