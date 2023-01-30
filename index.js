@@ -1,18 +1,23 @@
 window.addEventListener("load", e => {
     // console.log("done loading here and you can what you want to do")
     const slides = [...document.querySelectorAll(".slide-image-container")]
+    const H = window.innerHeight
+    var popups = [...document.querySelectorAll(".border-bottom-box")]
+
     slides.forEach((slide, index) => {
         slide.style.left = `${index*100}%`
     })
     let counter = 0
     const check = () => {
+
         if (counter > slides.length - 1) { counter = 0 }
         if (counter < 0) {
             counter = slides.length - 1
         }
     }
+    const nav = document.getElementsByTagName("nav")[0]
 
-
+    const navHeight = nav.getBoundingClientRect().height
     const leftArrow = document.getElementById("left-arrow")
     const rightArrow = document.getElementById("right-arrow")
     const topArrow = document.getElementById("top-arrow")
@@ -52,18 +57,63 @@ window.addEventListener("load", e => {
     }, 10000);
 
 
-    const nav = document.getElementsByTagName("nav")[0]
     topArrow.onclick = function(e) {
         $(document).scrollTop(0);
     }
     downArrow.onclick = function(e) {
         const lastIndex = document.querySelector(".last-index").offsetTop
         $(document).scrollTop(lastIndex);
-    }
-    window.addEventListener("scroll", e => {
-        const lastIndex = document.querySelector(".last-index").offsetTop
 
-        const navHeight = nav.getBoundingClientRect().height
+    }
+    const animate = document.querySelector(".animate")
+    var __timer = null
+    window.addEventListener("scroll", e => {
+        var lastIndex = null
+        if (document.querySelector(".last-index")) {
+            lastIndex = document.querySelector(".last-index").offsetTop
+        }
+        if (popups) {
+            if (animate) {
+                const _top = animate.getBoundingClientRect().top
+                if ((0.60 * H) >= _top && (navHeight + 40) <= _top) {
+                    if (!animate.classList.contains("_im_there_already")) {
+                        animate.classList.add("_im_there_already")
+                            // animate herre 
+                        const text = ` Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus labore veritatis quo facilis non modi sapiente explicabo, perferendis rem voluptatem fugiat consectetur asperiores provident nulla animi repellat exercitationem quas eligendi earum et,
+                        nihil natus? Minima iusto accusamus illum incidunt reprehenderit voluptas harum labore libero nihil commodi quo architecto, dicta veniam.`
+                        var i = 0
+                        __timer = setInterval(() => {
+                            i > text.length - 1 ? i *= -1 : i += 1
+                            animate.innerHTML = `<h1 style="padding:3rem 0; text-align:center;color:lightgreen">${text.slice(0, Math.abs(i))}</h2>`
+                        }, 50)
+
+
+                    }
+                } else {
+                    clearInterval(__timer)
+                    animate.classList.remove("_im_there_already")
+                    animate.innerHTML = `<h1 style="padding:3rem 0; text-align:center">
+                    
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus labore veritatis quo facilis non modi sapiente explicabo, perferendis rem voluptatem fugiat consectetur asperiores provident nulla animi repellat exercitationem quas eligendi earum et,
+                    nihil natus? Minima iusto accusamus illum incidunt reprehenderit voluptas harum labore libero nihil commodi quo architecto, dicta veniam.</h2>`
+                }
+
+            }
+            popups.forEach(popup => {
+                const { top } = popup.getBoundingClientRect()
+                if (top <= (0.60 * H)) {
+                    if (!popup.classList.contains("fadin")) {
+                        popup.classList.add("fadin")
+                    }
+                } else {
+                    if (popup.classList.contains("fadin")) {
+                        // popup.classList.add("fadin")
+                        popup.classList.remove("fadin")
+                    }
+                }
+                // console.log(top)
+            });
+        }
         const scrollY = window.pageYOffset
         const percent = ((scrollY + window.innerHeight) / lastIndex) * 100;
         if (percent > 75) {
@@ -96,10 +146,10 @@ window.addEventListener("load", e => {
         const left = sideNav.getBoundingClientRect().left
         if (left < 0) {
             sideNav.style.left = "0"
-            document.body.style.overflow = "hidden"
+            document.body.style.overflowY = "hidden"
         } else {
             sideNav.style.left = "-100%"
-            document.body.style.overflow = "auto"
+            document.body.style.overflowY = "auto"
         }
     }
     navToggler.addEventListener("click", e => {
@@ -125,7 +175,7 @@ window.addEventListener("load", e => {
     window.addEventListener("touchmove", e => {
         const scrollx = 50
         const diff = e.touches[0].clientX - first
-        if (diff >= 0 && sideNav.getBoundingClientRect().left < 0 && Math.abs(diff) > 30) {
+        if (diff >= 0 && sideNav.getBoundingClientRect().left < 0 && Math.abs(diff) > 50) {
             toggleSideNav()
         }
     })
@@ -155,6 +205,5 @@ window.addEventListener("load", e => {
         }
     }
     sliderContainer.addEventListener("touchmove", slideImage)
-
 
 })

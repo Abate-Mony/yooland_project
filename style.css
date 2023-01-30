@@ -31,6 +31,7 @@ body {
     /* overflow: hidden; */
     /* font-size: 1.6rem; */
     /* line-height: 1.5; */
+    user-select: none;
 }
 
 .--center {
@@ -49,10 +50,12 @@ nav {
 }
 
 .--d-none {
-    /* animation-name: slideLeft;
-    animation-duration: 2s;
-    animation-fill-mode: both; */
-    display: none
+    transition: all 0.9s ease;
+    /* left: -10rem; */
+    /* animation-name: slideLeft; */
+    /* animation-duration: 2s; */
+    /* animation-fill-mode: both; */
+    opacity: 0;
 }
 
 .container {
@@ -113,6 +116,7 @@ nav {
 .side-nav li {
     font-size: 1.2rem;
     color: var(--color);
+    overflow: hidden;
 }
 
 .side-nav li a {
@@ -124,17 +128,25 @@ nav {
 .overlayx {
     position: absolute;
     background-color: #38617a;
-    transform: rotate(-1deg);
+    transform: rotate(-2deg);
     transform-origin: left;
     padding: 1rem 0;
     opacity: 0.9;
     z-index: -20;
-    bottom: 0;
+    bottom: -5px;
+    height: 100%;
+    /* width: 100%; */
 }
 
 .side-nav li a:hover>.overlayx {
     animation-name: navanimation;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.side-nav li a:hover {
+    color: white;
 }
 
 #close-btn {
@@ -188,6 +200,10 @@ nav {
     transform: scale(1, 1.25);
 }
 
+.slide-image-container img:hover {
+    transform: scaleX(-1);
+}
+
 .slider-container .arrow {
     position: absolute;
     z-index: 11;
@@ -219,7 +235,7 @@ nav {
     width: 100%;
     position: absolute;
     bottom: 10px;
-    z-index: 12;
+    z-index: 11;
     margin: 0 auto;
     /* left: 50%; */
     display: flex;
@@ -247,6 +263,7 @@ nav {
     padding: 3rem 0rem;
     border-bottom: 1px solid var(--color-black);
     text-align: center;
+    opacity: 0;
 }
 
 .big-header {
@@ -264,12 +281,33 @@ nav {
 
 .img-box {
     width: 100%;
-    height: 100%;
+    height: 20rem;
     overflow: hidden;
+    position: relative;
 }
 
 .img-box img {
     width: 100%;
+    height: 100%;
+}
+
+.img-box div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    height: 100%;
+}
+
+.img-box:hover>div {
+    transition: all 0.3 ease;
+    display: block;
+    transform: scale(1);
+    transform: scale(1.5);
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }
 
 .text-box {
@@ -288,6 +326,24 @@ nav {
     width: fit-content;
     font-size: 0.8rem;
     color: #38617a;
+}
+
+.text-box button:hover,
+.--center-btn:hover {
+    transition: all 0.5s ease;
+    background-color: #383373;
+    background-color: #38617a;
+    color: white;
+    border-radius: 2px;
+}
+
+
+/* some balue here  */
+
+.fadin {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }
 
 
@@ -312,7 +368,7 @@ nav {
 
 .grid__3 {
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(5, 1fr);
     padding-top: 2rem;
     gap: 1rem;
 }
@@ -326,6 +382,7 @@ nav {
 .grid-img-container img {
     width: 100%;
     height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .loadmore {
@@ -398,6 +455,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     position: relative;
+    row-gap: 1rem;
 }
 
 .img-container- {
@@ -413,6 +471,40 @@ nav {
     display: none;
 }
 
+.img-grid-overlay h2 {
+    font-size: 2rem;
+    color: green;
+}
+
+.img-grid-overlay .--center-btn {
+    background-color: rgb(182, 153, 153);
+    padding: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.img-container-:hover>.img-grid-overlay .--center-btn {
+    animation-name: --width;
+    animation-duration: 0.6s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-fill-mode: both;
+    font-size: 1rem;
+}
+
+.img-grid-overlay .--center-btn:hover {
+    transition: all 0.5s ease;
+    color: white;
+    border-radius: 10px;
+    padding: 0 2rem;
+    box-sizing: content-box;
+    background-color: rgb(49, 46, 46);
+    text-decoration: underline;
+    border: none;
+}
+
 .img-container-:hover>.img-grid-overlay {
     transition: all 0.9s ease;
     display: block;
@@ -424,11 +516,12 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: transparent
+    background: transparent;
+    font-size: 0.2rem;
 }
 
 .img-container-:hover>img {
-    filter: blur(7px) brightness(70%);
+    filter: blur(2px) brightness(70%);
 }
 
 @keyframes fadeIn {
@@ -440,16 +533,31 @@ nav {
     }
 }
 
+@keyframes --width {
+    from {
+        width: 0;
+        height: 0;
+    }
+    to {
+        width: 100px;
+        height: 50px;
+    }
+}
+
 @keyframes navanimation {
     from {
         width: 0;
     }
     to {
-        width: 50vw;
+        width: 100vw;
     }
 }
 
 @media only screen and (max-width:768px) {
+    .nav__container h2 {
+        text-align: center;
+        font-size: 1.2rem;
+    }
     .container-content {
         width: var(--container-lg);
     }
@@ -466,6 +574,9 @@ nav {
         justify-content: space-between;
         padding: 1rem;
         font-size: 1rem;
+    }
+    .img__grid {
+        grid-template-columns: repeat(2, 1fr)
     }
 }
 
@@ -493,5 +604,8 @@ nav {
     }
     .slide-image-container {
         height: 50%;
+    }
+    .img__grid {
+        grid-template-columns: repeat(1, 1fr)
     }
 }
